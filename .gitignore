@@ -281,3 +281,9 @@ src/Acme.BookStore.Blazor.Server.Tiered/Logs/*
 # IdentityServer temp files
 tempkey.rsa
 tempkey.jwk
+# Local SQLite database and logs
+*.db
+*.db.bak
+**/Logs/
+*.db-shm
+*.db-wal

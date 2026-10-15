@@ -137,6 +137,13 @@ public class BookStoreWebModule : AbpModule
             });
         }
 
+        Configure<RazorPagesOptions>(options =>
+        {
+            options.Conventions.AuthorizePage("/Books/Index", BookStorePermissions.Books.Default);
+            options.Conventions.AuthorizePage("/Books/CreateModal", BookStorePermissions.Books.Create);
+            options.Conventions.AuthorizePage("/Books/EditModal", BookStorePermissions.Books.Edit);
+        });
+
         if (hostingEnvironment.IsDevelopment())
         {
             context.Services.AddRazorPages()
